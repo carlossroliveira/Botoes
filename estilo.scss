@@ -1,0 +1,82 @@
+/* Variavel */
+$corPrincipal: #21ebff;
+
+/* maxin */
+@mixin linha {
+    width: 100%;
+    height: 100%;
+    transition-delay: 0s;
+}
+
+
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+
+    a:nth-child(1) {
+        filter: hue-rotate(115deg);
+    }
+    a:nth-child(3) {
+        filter: hue-rotate(270deg);
+    }
+    a {
+        position: relative;
+        padding: 10px 30px;
+        margin: 0 15px;
+        color: $corPrincipal;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 20px;
+        overflow: hidden;
+        transition: 0.5s;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0003);
+
+        &:hover {
+            background-color: $corPrincipal;
+            color: #111;
+            box-shadow: 0 0 50px $corPrincipal;
+            transition-delay: 0s;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            transition: 0.5s;
+            transition-delay: 0.2s;
+            border-top: 2px solid $corPrincipal;
+            border-left: 2px solid $corPrincipal;
+        }
+        &:hover::before {
+            @include linha;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            transition: 0.5s;
+            transition-delay: 0.2s;
+            border-bottom: 2px solid $corPrincipal;
+            border-right: 2px solid $corPrincipal;
+        }
+        &:hover::after {
+            @include linha;
+        }
+    }
+}
