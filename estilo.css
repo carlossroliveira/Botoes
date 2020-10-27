@@ -44,6 +44,7 @@ body a {
   overflow: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  cursor: pointer;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0003);
 }
 
